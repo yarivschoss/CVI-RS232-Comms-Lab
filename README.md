@@ -2,7 +2,6 @@
 
 [![Toolchain](https://img.shields.io/badge/LabWindows--CVI-2020%2B-blue)](#building)
 [![Language](https://img.shields.io/badge/C-ANSI-green)](#source-files)
-[![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 
 > **Course:** CVI Programming & Instrumentation (Afeka College, 2025)  
 > **Author:** Yariv Shossberger
@@ -20,18 +19,18 @@
 ---
 
 ## Project Overview
-This LabWindows/CVI application demonstrates **bidirectional RS‑232 data exchange** using two **virtual COM ports (COM1 ↔ COM2)** bridged by *Virtual Serial Port Tools*.  
+This LabWindows/CVI application demonstrates **bidirectional RS‑232 data exchange** using two **virtual COM ports (COM1 ↔ COM2)** bridged locally with *Virtual Serial Port Tools*.  
 It supports three data modes and visualises the traffic live on a digital analyser panel.
 
 ---
 
 ## Key Features
-* **String I/O** – polling *or* interrupt driven, optional parity error‑correction toggle. 
-* **Numeric I/O** – full‑duplex double precision numbers via receive interrupt. 
-* **Binary Image Transfer** – chunked send/receive with dynamic bitmap reconstruction on a canvas. 
-* **Digital Bit Analyser** – plots raw UART bits for string mode using `PlotDigitalLines`.  
-* **Configurable polling rate** (timer) and on‑the‑fly parity re‑initialisation.  
-* **Thread pool + locks** for safe background polling and GUI responsiveness.  
+* **String I/O** – polling *or* interrupt driven, optional parity error‑correction toggle  
+* **Numeric I/O** – full‑duplex double precision numbers via receive interrupt  
+* **Binary Image Transfer** – chunked send/receive with dynamic bitmap reconstruction on a canvas  
+* **Digital Bit Analyser** – plots raw UART bits for string mode using `PlotDigitalLines`  
+* **Configurable polling rate** (timer) and on‑the‑fly parity re‑initialisation  
+* **Thread pool + locks** for safe background polling and GUI responsiveness  
 
 ---
 
@@ -49,11 +48,11 @@ It supports three data modes and visualises the traffic live on a digital analys
 ## Communication Modes
 | Mode | How it works |
 |------|--------------|
-| **String** | User types text → `SendCallback` writes to COM1, reads echo from COM2 and plots bits. Optional **polling**: two threads periodically write/read both ports via `comThread` and a GUI timer. |
-| **Numeric** | Numeric control value formatted as ASCII, sent on COM1; COM2 receive interrupt (`readInterrupt`) updates display. |
-| **Binary Image** | Selected bitmap is serialised and chunk‑written (`SendImageAsync`). COM2 interrupt (`receiveImage`) rebuilds the image and draws it on the canvas once complete. |
+| **String** | User types text → `SendCallback` writes to COM1, reads echo from COM2 and plots bits. Optional **polling**: two threads periodically write/read both ports via a timer. |
+| **Numeric** | Numeric control value formatted as ASCII, sent on COM1; COM2 receive interrupt updates display. |
+| **Binary Image** | Selected bitmap is serialised and chunk‑written. COM2 interrupt rebuilds the image and draws it on the canvas once complete. |
 
-All modes rely on the helper `initilizeComPorts()` which opens both ports at **9600 Bd, 7E1/7O1/7N1** depending on the parity setting fileciteturn12file0.
+All modes rely on `initilizeComPorts()` which opens both ports at **9600 Bd, 7E1/7O1/7N1** depending on the parity setting.
 
 ---
 
@@ -64,15 +63,21 @@ All modes rely on the helper `initilizeComPorts()` which opens both ports at **9
 * Windows 10/11
 
 ### Steps
-1. Clone / download this repo.  
-2. Open **`EX8.prj`** or workspace **`EX8.cws`** in CVI.  
+1. Clone or download this repository.  
+2. Open **`EX8.prj`** or workspace **`EX8.cws`** in LabWindows/CVI.  
 3. Ensure the bridged ports are named **COM1** and **COM2** or edit `def.h` → `COM_PORT_1/2`.  
 4. *Build → Run* (F5).  
-5. Use the *Menu → Communication Type* to switch modes, then interact with the controls.
+5. Use *Menu → Communication Type* to switch modes, then interact with the controls.
 
-### Troubleshooting
-* “Failed to open COMx” → Check bridge is active and not in use by other apps.  
-* Image transfer stalls → Increase queue size constants `Q_SIZE` in `def.h` or lower baud.
+> **Shortcut:**  
+> A pre‑built **EX8.exe** is included. If the LabWindows/CVI Run‑Time Engine is installed, you can launch the GUI directly:
+>
+> ```bash
+> cd path/to/CVI_RS232_Lab/bin   # folder containing EX8.exe
+> EX8.exe
+> ```
+>
+> Make sure your virtual bridge (COM1 ↔ COM2) is active, or update `def.h` and rebuild to match different port names.
 
 ---
 
