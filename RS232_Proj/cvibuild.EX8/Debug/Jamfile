@@ -1,0 +1,44 @@
+CCFLAGS = -g ;
+HDRS = 	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\activex\\word"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\activex\\excel"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\custctrl"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\custctrl\\custsupp"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\cvirtsup"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\datasock"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\daqUtil"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\printing"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\toolbox"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\reportgen"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\toolslib\\localui"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\instr"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl\\custsupp"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr"
+	"C:\\ProgramData\\National Instruments\\CVI2020\\instr"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\include"
+	"C:\\ProgramData\\National Instruments\\CVI2020\\include"
+	"C:\\ProgramData\\National Instruments\\CVI\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\include\\ansi"
+	"c:\\program files (x86)\\national instruments\\cvi2020\\include\\clang\\3.3"
+	"C:\\Program Files (x86)\\IVI Foundation\\IVI\\Include"
+	"C:\\Program Files (x86)\\IVI Foundation\\VISA\\winnt\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\MSDTRedistributables\\SDKHeaderFiles\\8.1"
+	"c:\\Program Files (x86)\\National Instruments\\CVI2020\\bin"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\Bin"
+	;
+include Jamfile_instr ;
+LOCATE on "def.h" = "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8" ;
+LOCATE on "EX8.c" = "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8" ;
+LOCATE on "EX8.h" = "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8" ;
+Object "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.obj" : "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\EX8.c" ;
+FILENUM on "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.obj" = 1 ;
+DEFPROTS on "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.obj" = "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.obj.cvidefprots" ;
+OUTFILE on "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.obj" = "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.obj.out" ;
+PrjObjects += "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.obj" ;
+Object "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\resources.res" : "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\resources.in.rc" ;
+Depends "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\resources.res" : "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\manifest.xml" ;
+MainFromObjects "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.exe" : $(PrjObjects) $(InstrObjects) ;
+Depends "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.exe" : "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\link_options.txt" ;
+Depends "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.exe" : "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\resources.res" ;
+Depends all : "c:\\Users\\yariv\\OneDrive - Afeka College Of Engineering\\BSc_EEE\\Apprenticeship\\Computers\\ComputerApplications_CVI\\Lesson8\\cvibuild.EX8\\Debug\\EX8.exe" ;
