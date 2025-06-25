@@ -1,4 +1,4 @@
-# 🔄 RS‑232 Communication Lab – LabWindows/CVI
+# 🔄 RS‑232 Communication – LabWindows/CVI
 
 [![Toolchain](https://img.shields.io/badge/LabWindows--CVI-2020%2B-blue)](#building)
 [![Language](https://img.shields.io/badge/C-ANSI-green)](#source-files)
